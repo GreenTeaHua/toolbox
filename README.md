@@ -22,8 +22,10 @@ savepath;
 注意：由于要用到部分C++程序，所以我们需要编译一下：   
 在MATLAB命令窗口输入：toolboxCompile;   
 用到的是： 
-H = hog( I, binSize, nOrients, clip, crop ) 
+H = hog( I, binSize, nOrients, clip, crop )   
+
 INPUTS 
+
 % I - [hxw] color or grayscale input image (must have type single) 
 % binSize - [8] spatial bin size 
 % nOrients - [9] number of orientation bins 
