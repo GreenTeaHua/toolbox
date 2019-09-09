@@ -97,7 +97,7 @@ H1=gradientHist(M,O,2,6,0);
 使用方法：   
 I = imread(‘peppers.png’);   
 J = rgbConvert( I, ‘luv’ );   
-J2=rgbConvert( I, ‘hsv’ ); 
+J2=rgbConvert( I, ‘hsv’ );   
 （6）image里的varargout = montage2( IS, prm )的使用：     
 作用是显示各个通道的图像。   
 使用方法：     
