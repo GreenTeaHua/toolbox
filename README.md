@@ -17,8 +17,8 @@ General Matlab functions that should have been a part of Matlab.
 Routines for annotating and displaying videos.   
 # 添加路径
 addpath(genpath(‘D:\piotr_toolbox\toolbox’)); 
-savepath; 
-（1）channel里的hog的使用： 
+savepath;   
+（1）channel里的hog的使用：   
 注意：由于要用到部分C++程序，所以我们需要编译一下：   
 在MATLAB命令窗口输入：toolboxCompile;   
 用到的是： 
@@ -49,7 +49,7 @@ INPUTS
 调用方法: 
 V=hogDraw(e,25); 
 im(V); 
-(3)channel里的gradientMag的使用： 
+(3)channel里的gradientMag的使用：      
 用到的是：[M,O] = gradientMag( I, channel, normRad, normConst, full ) 
 作用是求出每个像素的梯度以及幅值。 
 % INPUTS 
@@ -65,7 +65,7 @@ im(V);
 调用： 
 a=rgbConvert(imread(‘peppers.png’),’gray’); 
 [M,O]=gradientMag(a); 
-（4）channel里的gradientHist的使用： 
+（4）channel里的gradientHist的使用：    
 作用是求每一个patch的梯度统计。 
 用到的是：H = gradientHist( M, O, varargin ) 
 % INPUTS 
@@ -82,7 +82,7 @@ a=rgbConvert(imread(‘peppers.png’),’gray’);
 % H - [w/binSize x h/binSize x nOrients] gradient histograms 
 调用： 
 H1=gradientHist(M,O,2,6,0); 
-（5）channel里的J = rgbConvert( I, colorSpace, useSingle )的使用： 
+（5）channel里的J = rgbConvert( I, colorSpace, useSingle )的使用：   
 作用是实现不同的图像空间的相互转换。 
 % INPUTS 
 % I - [hxwx3] input rgb image (uint8 or single/double in [0,1]) 
@@ -95,7 +95,7 @@ H1=gradientHist(M,O,2,6,0);
 I = imread(‘peppers.png’); 
 J = rgbConvert( I, ‘luv’ ); 
 J2=rgbConvert( I, ‘hsv’ ); 
-（6）image里的varargout = montage2( IS, prm )的使用： 
+（6）image里的varargout = montage2( IS, prm )的使用：   
 作用是显示各个通道的图像。 
-使用方法： 
-figure(2),montage2(J);
+使用方法：   
+figure(2),montage2(J);  
