@@ -1,18 +1,26 @@
 Documentation: https://pdollar.github.io/toolbox/
 
+这个工具箱一共包含七大部分： 
+## channels 
+Robust image features, including HOG, for fast object detection.   
+## classify 
+Fast clustering, random ferns, RBF functions, PCA, etc.   
+## detector 
+Aggregate Channel Features (ACF) object detection code.   
+## filters 
+Routines for filtering images.   
+## images 
+Routines for manipulating and displaying images.   
+## matlab 
+General Matlab functions that should have been a part of Matlab.   
+## videos 
+Routines for annotating and displaying videos.   
+# 添加路径
 addpath(genpath(‘D:\piotr_toolbox\toolbox’)); 
 savepath; 
-这个工具箱一共包含七大部分： 
-channels Robust image features, including HOG, for fast object detection. 
-classify Fast clustering, random ferns, RBF functions, PCA, etc. 
-detector Aggregate Channel Features (ACF) object detection code. 
-filters Routines for filtering images. 
-images Routines for manipulating and displaying images. 
-matlab General Matlab functions that should have been a part of Matlab. 
-videos Routines for annotating and displaying videos. 
 （1）channel里的hog的使用： 
-注意：由于要用到部分C++程序，所以我们需要编译一下： 
-在MATLAB命令窗口输入：toolboxCompile; 
+注意：由于要用到部分C++程序，所以我们需要编译一下：   
+在MATLAB命令窗口输入：toolboxCompile;   
 用到的是： 
 H = hog( I, binSize, nOrients, clip, crop ) 
 INPUTS 
@@ -23,18 +31,18 @@ INPUTS
 % crop - [0] if true crop boundaries（对边界特别处理） 
 % 
 % OUTPUTS 
-% H - [h/binSize w/binSize nOrients*4] computed hog features 
+% H - [h/binSize w/binSize nOrients*4] computed hog features   
 调用方法： 
 I=imResample(single(imread(‘peppers.png’)),[480 640])/255; 读取图像，统一图像大小，类型为Single 
-H=hog(I,8,9); 返回的是60*80*36的多维矩阵（考虑边界的8个像素） 
-e=hog(I,8,9,0.2,1);返回的是58*78*36的多维矩阵（考虑边界的8个像素） 
-（2）channel里的hogDraw的使用： 
+H=hog(I,8,9); 返回的是60*80*36的多维矩阵（考虑边界的8个像素）   
+e=hog(I,8,9,0.2,1);返回的是58*78*36的多维矩阵（考虑边界的8个像素）   
+（2）channel里的hogDraw的使用：   
 用到的是： V = hogDraw( H, w, fhog ) 
 作用是画出hog的示意图。 
-INPUTS 
-% H - [m n oBin*4] computed hog features 
-% w - [15] width for each glyph 
-% fhog - [0] if true draw features returned by fhog 
+INPUTS   
+% H - [m n oBin*4] computed hog features   
+% w - [15] width for each glyph   
+% fhog - [0] if true draw features returned by fhog   
 % 
 % OUTPUTS 
 % V - [m*w n*w] visualization of hog features 
